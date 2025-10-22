@@ -1,0 +1,7 @@
+user_comment_stats.generate_users:
+  path: '/admin/generate-random-users'
+  defaults:
+    _controller: '\Drupal\user_generator\Controller\UserGeneratorController::generate'
+    _title: 'Generar usuarios de prueba'
+  requirements:
+    _permission: 'administer users'

@@ -1,0 +1,5 @@
+name: 'User Comment Stats'
+type: module
+description: 'Proporciona un bloque con información sobre los comentarios de usuarios.'
+package: Custom
+core_version_requirement: ^10

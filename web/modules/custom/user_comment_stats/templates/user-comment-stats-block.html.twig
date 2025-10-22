@@ -1,0 +1,28 @@
+
+<div class="card mb-4 shadow-sm">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">{{ 'Estadísticas de comentarios del usuario:'|t }} {{ user_name }}</h5>
+  </div>
+  <div class="card-body">
+    <p><strong>{{ 'Comentarios publicados:'|t }}</strong> {{ total_comments }}</p>
+    <p><strong>{{ 'Total de palabras en comentarios:'|t }}</strong> {{ total_word_count }}</p>
+
+    {% if recent_comments %}
+      <h6 class="mt-4">{{ 'Últimos 5 comentarios'|t }}</h6>
+      <ul class="list-group list-group-flush">
+        {% for item in recent_comments %}
+          <li class="list-group-item">
+            <a href="{{ item.comment_url }}" class="fw-semibold text-decoration-none">
+              {{ item.comment_subject ?: 'Sin asunto' }}
+            </a>
+            <small class="text-muted">
+              {{ 'en'|t }} <a href="{{ item.node_url }}">{{ item.node_title }}</a>
+            </small>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-muted">{{ 'No hay comentarios recientes.'|t }}</p>
+    {% endif %}
+  </div>
+</div>

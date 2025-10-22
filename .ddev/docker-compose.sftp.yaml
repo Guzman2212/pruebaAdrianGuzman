@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  sftp:
+    image: atmoz/sftp
+    container_name: ddev-${DDEV_SITENAME}-sftp
+    environment:
+      - SFTP_USERS=adriango:password:adriango
+    volumes:
+      - ./web:/home/web/web
+    ports:
+      - "2222:22"
